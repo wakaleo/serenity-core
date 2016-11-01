@@ -146,7 +146,7 @@ dependencies {
         exclude group: 'cglib', module: 'cglib-nodep'
     }
     compile "com.typesafe:config:${typesafeConfigVersion}"
-    compile('org.jsoup:jsoup:1.9.2') {
+    compile('org.jsoup:jsoup:1.8.3') {
         exclude group: 'junit', module: 'junit'
     }
     compile('com.google.jimfs:jimfs:1.0') {

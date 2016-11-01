@@ -1,4 +1,4 @@
-package net.serenitybdd.screenplay.webtests;
+package net.serenitybdd.screenplay.webtests.category2.web;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;

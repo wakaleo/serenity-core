@@ -1,10 +1,31 @@
+group = 'net.serenity-bdd'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.5'
+        classpath("net.serenity-bdd:serenity-gradle-plugin:1.1.37-SNAPSHOT")
+    }
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
 ext {
     bintrayPackage = 'serenity-screenplay-webdriver'
     projectDescription = 'Webdriver integration for the User Journey pattern in Serenity'
 }
+
+apply plugin: "java"
+apply plugin: "net.serenity-bdd.aggregator"
+
 
 dependencies {
     compile project(':serenity-core')
     compile project(':serenity-screenplay')
     testCompile project(':serenity-junit')
 }
+gradle.startParameter.continueOnFailure = true
