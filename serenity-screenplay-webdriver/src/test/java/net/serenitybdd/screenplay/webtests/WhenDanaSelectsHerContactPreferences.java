@@ -18,7 +18,7 @@ import static org.hamcrest.Matchers.hasItems;
 @RunWith(SerenityRunner.class)
 public class WhenDanaSelectsHerContactPreferences {
 
-    @Managed(driver = "htmlunit")
+    @Managed(driver = "iexplorer", uniqueSession = true)
     WebDriver firstBrowser;
 
     @Test

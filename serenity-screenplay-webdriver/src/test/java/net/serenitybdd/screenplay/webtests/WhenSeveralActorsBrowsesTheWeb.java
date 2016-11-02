@@ -20,7 +20,7 @@ import static org.hamcrest.Matchers.hasProperty;
 @RunWith(SerenityRunner.class)
 public class WhenSeveralActorsBrowsesTheWeb {
 
-    @Managed(driver = "htmlunit")
+    @Managed(driver = "iexplorer", uniqueSession = true)
     WebDriver firstBrowser;
 
     @Test
