@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.hasItems;
 
 @RunWith(SerenityRunner.class)
-public class WhenDanaSelectsHerContactPreferences {
+public class DanaHappyPathScenarios {
 
     @Managed(driver = "htmlunit")
     WebDriver firstBrowser;

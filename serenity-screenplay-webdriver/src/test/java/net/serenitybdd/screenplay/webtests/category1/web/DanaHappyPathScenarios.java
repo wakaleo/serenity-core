@@ -25,7 +25,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 @RunWith(SerenityRunner.class)
-public class WhenDanaBrowsesTheWeb {
+public class DanaHappyPathScenarios {
 
     @Managed(driver = "htmlunit")
     WebDriver firstBrowser;
