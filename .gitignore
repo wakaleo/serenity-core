@@ -3,6 +3,7 @@ build
 .idea
 lib
 target
+out
 *.iml
 *.log
 /serenity-core.ipr
