@@ -9,6 +9,8 @@ import org.joda.time.format.DateTimeFormat;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public abstract class UIState<T> {
 
@@ -69,7 +71,6 @@ public abstract class UIState<T> {
     protected <T> List<T> convertToEnums(Class<T> enumType, List<?> values) {
         return EnumValues.forType(enumType).getValuesOf(values);
     }
-
     protected Converter converterFor(Class<?> type) {
         Preconditions.checkState(DEFAULT_CONVERTERS.containsKey(type),"No converter found for " + type);
         return DEFAULT_CONVERTERS.get(type);

@@ -223,12 +223,12 @@ class WhenReadingUIValues extends Specification {
             Attribute.of(target).named("checked").viewedBy(actor).as(Boolean) == true
     }
 
-    def "should read multiple attribute values"() {
+    def "should read multiple attribute enum values"() {
         when:
-            element.getAttribute("checked") >> "true"
-            element2.getAttribute("checked") >> "false"
+        element.getText() >> "red"
+        element2.getText() >> "blue"
         then:
-            Attribute.of(target).named("checked").viewedBy(actor).asListOf(Boolean.class) == [true, false]
+        Text.of(target).viewedBy(actor).asListOf(Color.class) == [Color.red, Color.blue]
     }
 
     def "should read size value"() {

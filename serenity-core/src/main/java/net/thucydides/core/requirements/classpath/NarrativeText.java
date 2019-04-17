@@ -17,7 +17,7 @@ public class NarrativeText {
     public static String definedIn(String fullPath, String type) {
         String narrativePath = fileSystemPathOfNarrativeInPackage(fullPath) + ".txt";
         try {
-            String narrativeFilePath = Resources.getResource(narrativePath).getFile();
+            String narrativeFilePath = Resources.getResource(normalisedPath(narrativePath)).getFile();
             if (new File(narrativeFilePath).exists()) {
                 Optional<Narrative> narrative = LoadedNarrative.load().fromFile(new File(narrativeFilePath), type);
                 if (narrative.isPresent()) {
@@ -27,6 +27,10 @@ public class NarrativeText {
         } catch(IllegalArgumentException noNarrativeFileFound){}
 
         return "";
+    }
+
+    private static String normalisedPath(String narrativePath) {
+        return narrativePath.replace("\\", "/");
     }
 
     private static String fileSystemPathOfNarrativeInPackage(String fullPath) {

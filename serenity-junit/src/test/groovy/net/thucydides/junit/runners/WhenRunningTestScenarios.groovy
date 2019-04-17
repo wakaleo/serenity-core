@@ -56,12 +56,12 @@ class WhenRunningTestScenarios extends Specification {
 
     def "should be able to record the driver used for a test"() {
         given:
-            def runner = new SerenityRunner(SamplePassingScenarioUsingFirefox);
+            def runner = new SerenityRunner(SamplePassingScenarioUsingChrome);
         when:
             runner.run(new RunNotifier())
             def drivers = runner.testOutcomes.collect {it.driver}
         then:
-            drivers.contains("firefox")
+            drivers.contains("chrome")
     }
 
     def "should be able to record the driver used for a test when a different driver is specified"() {
@@ -92,7 +92,7 @@ class WhenRunningTestScenarios extends Specification {
             runner.run(new RunNotifier())
             def drivers = runner.testOutcomes.collect {it.driver}
         then:
-            drivers.contains("firefox") && drivers.contains("htmlunit")
+            drivers.contains("chrome") && drivers.contains("htmlunit")
     }
 
 

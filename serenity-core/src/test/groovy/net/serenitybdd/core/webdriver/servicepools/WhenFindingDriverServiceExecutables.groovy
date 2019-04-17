@@ -33,7 +33,7 @@ class WhenFindingDriverServiceExecutables extends Specification {
                 .downloadableFrom("the internet")
                 .asAFile()
         then:
-        gitExe.getAbsolutePath() == configuredPath
+        gitExe == new File(configuredPath)
     }
 
     def "should report a sensible error if no binary is found"() {

@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.*;
 
 import static java.lang.Math.max;
+import static java.util.Collections.sort;
 import static net.thucydides.core.requirements.annotations.ClassInfoAnnotations.theClassDefinedIn;
 import static net.thucydides.core.requirements.classpath.LeafRequirementAdder.addLeafRequirementDefinedIn;
 import static net.thucydides.core.requirements.classpath.NonLeafRequirementsAdder.addParentsOf;
@@ -115,7 +116,7 @@ public class PackageRequirementsTagProvider extends AbstractRequirementsTagProvi
 
         try {
             List<String> requirementPaths = requirementPathsStartingFrom(rootPackage);
-            Collections.sort(requirementPaths, byDescendingPackageLength());
+            sort(requirementPaths, byDescendingPackageLength());
             int requirementsDepth = longestPathIn(requirementPaths);
 
             Set<Requirement> allRequirements = Sets.newHashSet();
@@ -127,7 +128,7 @@ public class PackageRequirementsTagProvider extends AbstractRequirementsTagProvi
 
             if (!allRequirements.isEmpty()) {
                 classpathRequirements = Lists.newArrayList(allRequirements);
-                Collections.sort(classpathRequirements);
+                sort(classpathRequirements);
 
                 requirementsStore.write(classpathRequirements);
             }

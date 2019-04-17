@@ -4,6 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.targets.Target;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public abstract class TargetedUIState<T> extends UIState<T>{
 
